@@ -1,0 +1,606 @@
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+# This defines the blur effect so Ren'Py knows what it is
+transform blur_on:
+    blur 10.0
+
+transform blur_off:
+    blur 0.0
+#Main character but his inner thoughts are italicized
+define Ji = Character("John",color = "#25AD2E", who_font ="fonts/atwriter.ttf",who_size = 60 , what_font="fonts/atwriter.ttf", what_italic=True)
+define J = Character("John", color = "#25AD2E", who_font ="fonts/atwriter.ttf", who_size = 60 ,what_font="fonts/atwriter.ttf")
+define N = Character(None, what_font= "fonts/XTypewriter-Bold.ttf")
+
+define M = Character("Mary",color = "#aa9615", who_font= "fonts/Roman_New_Times.otf", who_size = 90, what_font="fonts/LTMuseum-Bold.ttf" )
+define T = Character("Toilet",color = "#ffffff",who_font ="fonts/atwriter.ttf", who_size = 60, what_font= "fonts/XTypewriter-Regular.ttf" )
+
+#Extra characters for easier coding 
+#Dead characters
+define Dj = Character("John",color = "#25AD2E", who_font ="fonts/XTypewriter-Bold.ttf",who_size = 60 , what_font="fonts/XTypewriter-Bold.ttf", what_italic=True)
+define Dt = Character("Toilet",color = "#ffffff",who_font ="fonts/XTypewriter-Bold.ttf", who_size = 60, what_font= "fonts/XTypewriter-Bold.ttf" )
+
+#Complex characters
+define D = Character(None, 
+    window_yalign=0.5, 
+    what_xalign=0.5, 
+    what_text_align=0.5,
+    window_background=None,
+    what_yalign=0.5,             # Centers vertically
+    what_outlines=[(2, "#000", 0, 0)],    # Adds a black outline so it's readable over any BG
+    what_color="#930707ce", what_font="fonts/Roman_New_Times.otf", what_size = 100
+)
+# The game starts here.
+
+label start:
+#Play rain noises or something
+
+    scene bg starting
+    
+    
+    N "The rain was heavy. Each drop tearing through the valley."
+    N "This lone house existed in the valley. The only semblance of hospitality."
+    N "It was a meticulous trap laid by its creator. Just for me..."
+
+   
+    jump The_Forgotten
+    hide bg starting
+
+label The_Forgotten:
+
+    scene bg livingroom
+    show john idle
+    Ji " The rain beat down making a sporadic rhythm of wooden clicks and bobs against the house."
+    Ji "I was thoroughly surprised by the lack of electronics and modern appliances in this home."
+    Ji "The only electronics were a brown telephone, the fridge, the stove and the homes lighting system."
+    
+    Ji " This place was not kind in any way. Everything about it felt wrong. Something... No, this region is giving me the heebie jeebies." 
+    Ji "An example being, there was sunlight only an hour ago but this sudden rain storm rushed in all of sudden."
+    Ji "My car mysteriously breaking down and having a flat when all I did was drive on flat dirt, or the issues with the engine."
+    Ji " Most importantly, all this land being as abandoned as it is with no sort of expansion."
+    Ji " All this land, and only a single home in a valley..."
+
+    jump Empty_Thoughts
+
+label Empty_Thoughts:
+
+    show john annoyed
+    Ji "I stared at the brown phone. It was my siren's call. This dinky rotary phone straight out of the 70's."
+    J " God I hate how brown this thing is..."
+    Ji " It reminds me of shit with how weirdly colored it is."
+
+    J "{b} tap tap tap {/b}..."
+
+    J "There has to be something to do here..."
+    menu:
+        "Look for a Book?":
+            jump The_Cabinets
+        "Pace Around?":
+            jump Pace_Maker
+        "Get a Chair?":
+            call Foreboding
+        #This would be the ending for the chair route.
+    ""
+    return
+
+
+
+#-----------------------------------------------
+#-- Book Route Start
+#-----------------------------------------------
+label The_Cabinets:
+    scene bg kitchen
+    show john idle
+    Ji " I moved around this weird house looking for anything that looked remotely interesting. Anything. A book, a pencil, paper?"
+    Ji " How are you going to have nothing to entertain yourself here?"
+    Ji " As I rounded the corner into a room I hit head first into a tall cabinet."
+    show john frustrated
+    J "Why? Why do you put it there?"
+    show john idle
+    Ji "As I looked up there there were, a set of books."
+    Ji "I found something to finally free myself from this place."
+    jump Ol_Times
+
+label Ol_Times:
+<<<<<<< HEAD
+    Ji "The Art of Baking 100 Different Cakes by Mary DeLou"
+    show john annoyed
+=======
+    Ji "{font=fonts/LTMuseum-MediumItalic.ttf}The Art of Baking 100 Different Cakes by Mary DeLou{/font}"
+>>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
+    J "You got to be fucking with me... Who the fuck owns a recipe book, when you don't have shit for fucking miles!?"
+    Ji "Add the fact that I'm hungry as shit and the only thing in this damn house are old cans preserved fruits and veggies that look older than dinosaur shit."
+    show john idle
+    J "Breathe... Breathe...Read the damn book and move onto the next."
+    Ji "If it wasn't for the fact that I had lost my shit, this would have been perfect reading weather."
+    Ji "To spite myself even more I walked into the kitchen to read this book."
+    jump Meat_Poundcake
+
+label Meat_Poundcake:
+    Ji "I sat at the table beginning at the table of contents. Vanilla, Chocolate, Strawberry, Mixed Berry...\"Meat\"?"
+    show john surprised
+    J  "What? It can't be real. Page 59..."
+    J "To start the meat poundcake you first need an assortment of red colored fruits. Begin by mashing the..."
+    Ji "And I'm done with that. Really had me scared of what the hell this damn cake was."
+    hide john
+    show grandma idle
+    M "That won't do~"
+    hide grandma
+    show john surprised
+    J "Huh who's there?"
+    hide john
+    show grandma idle
+    M "If you are going to read a recipe, you might as well see it through the end dear."
+    hide grandma
+    jump With_Elbow_Grease
+
+label With_Elbow_Grease:
+    show john idle
+    Ji "There are at the entry to the kitchen stood a thing I had never seen. It was a wax person with a melted exterior."
+    hide john
+    show grandma hunting
+    M "The first step is acquire red fruit."
+    hide grandma
+    show john frustrated
+    Ji "I got up from the chair and backed away only to get charged by the creature."
+    hide john
+    show john injured
+    J "AUGHh!"
+    Ji "It lifted me off the ground by the throat and armpit. My windpipe was getting crushed under the force of the creatures grip."
+    J "I couldn't speak, nor could I fight back."
+    hide john
+    show grandma hunting
+    M "Next you mash the berries to a pulp"
+    hide grandma
+    show john injured
+    J "Oh F-" 
+    Ji "I was immediately slammed repeatedly against the stove with no chance of escape."
+    scene bg kitchenbloody
+    "The kitchen was painted {color=#B31F05}red{/color}. In the heat of cooking mistakes always happen. Some, greater than others..."
+    jump Fit_For_All
+
+#-----------------------------------------------
+#-- Book Route end
+#-----------------------------------------------
+
+label Fit_For_All:
+    show john injured
+    Ji "It felt like a joke... A toilet. Right there. Staring at me from the abyss."
+    J " I... Why? Why the fuck am I seeing a toilet as my FINAL SENDOFF?!"
+    Ji "The gray ceramic toilet stood there. No noise, no sudden movement, perfectly still."
+    Ji "I fell to my knees sobbing. But there was nothing to fall on but nothingness. No tears to be made."
+    Ji "Yet there it stood. Never getting small or far away... It waited for me. "
+    Ji "When nothing else would." 
+    Ji "{color=#752B24}A fucking toilet.{/color}"
+    
+    return
+
+#-----------------------------------------------
+#-- Toilet Route start
+#-----------------------------------------------
+
+label Pace_Maker:
+    scene bg livingroom
+    show john idle
+    Ji "I paced around the entire house relentlessly. The rain did not stop." 
+    Ji "My boredom never waning. My patience, at rock bottom."
+<<<<<<< HEAD
+    $ renpy.layer_at_list([blur_on], layer='screens')
+    show john frustrated
+    J "{b}AHHHHH! WHY! WHY DID i ACCEPT TO COME TO THIS STUPID PLACE?! NOTHING ABOUT THIS PLACE MAKES SENSE.{/b}"
+    J "{b}WHY THE FUCK DO WE OWN SOME RANDOM VALLEY IN THE MIDDLE OF NOWHERE!{/b}"
+    $ renpy.layer_at_list([blur_off], layer='screens')
+    Ji "Nothing made sense. It never did. From the stat of arriving here, to my car car breaking down"
+=======
+    
+    show john annoyed
+    J "AHHHHH! WHY! WHY DID i ACCEPT TO COME TO THIS STUPID PLACE?! NOTHING ABOUT THIS PLACE MAKES SENSE."
+    J "WHY THE FUCK DO WE OWN SOME RANDOM VALLEY IN THE MIDDLE OF NOWHERE!"
+   
+    Ji "Nothing made sense. It never did. From the start of arriving here, to my car car breaking down"
+>>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
+    #Queue toilet flushing
+    T "Flush"
+    Ji "If matters were not worse, the toilet is being used by a ghost. Not that it made my life any better."
+    jump Malfunction
+
+label Malfunction:
+    scene bg bathroom
+    show john idle
+    Ji "I walked towards the bathroom in a rush. My impatience had grown so big that even a malfunctioning toilet seemed more interesting than anything else."
+    Ji "I opened the door to the bathroom and there it was. This white ceramic shitter that is distracting me from my cruel reality."   
+    Ji "I began inspecting the toilet's pipes and the internal buoy for any issues. There was nothing wrong with it."
+    show john annoyed
+    J "What the hell is wrong with you? Is there some sort of backflow from the rain water causing something else to happen?"
+    hide john
+    show toilet idle
+    T "Bloop"
+    hide toilet
+    show john surprised
+    Ji "The toilet somehow bubbled. I am not sure how it did that."
+
+    jump Going_Once
+
+label Going_Once:
+    show john idle
+    Ji "Seeing as I didn't know what was exactly happening I tried flushing the toilet."
+    hide john
+    show toilet idle
+    T "Flush"
+    hide toilet
+    show john idle
+    J "Well, you still work. I guess..."
+    hide john
+    show toilet idle 
+    T "Bloop"
+    hide toilet
+    show john idle
+    Ji "The toilet once again bubbled. This toilet is weird; Just like this house. It's all either really old or, on the verge of collapse. With not much else to do I began going back to my pacing around."
+    hide john
+    show toilet idle
+    T "Swoosh"
+    hide toilet
+    show john idle
+    Ji "I had only made my way out the bathroom only to hear it go off again."
+    hide john
+    show toilet idle
+    T "Bloop Bloop Bloop"
+    hide toilet
+    show john idle
+    jump One_Or_Two
+
+label One_Or_Two:
+    Ji "I begun pacing once more throughout the house. If anything this was more entertaining than doing nothing."
+    hide john
+    show toilet idle
+    T "Flush"
+    hide toilet
+    show john idle
+    Ji "The toilet kept flushing randomly now. I tried to act like it didn't exist but it would sudde-"
+    hide john
+    show toilet idle
+    T "Bloop Bloop Bloop"
+    hide toilet
+    show john idle
+    Ji "Like that. The toilet just kept making noise. I don't know what feels more annoying now, the lack of control over my situation or the ghost who keeps flushing my god damn toilet."
+    hide john
+    show toilet idle
+    T "Swoosh"
+    hide toilet
+    show john idle
+    Ji "I darted towards the bathroom with a fire inside and a click of my tongue ready to fire."
+    hide john
+    jump Potty_Mouth
+
+label Potty_Mouth:
+<<<<<<< HEAD
+    show john frustrated
+    $ renpy.layer_at_list([blur_on], layer='screens')
+=======
+    show john annoyed
+    
+>>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
+    J "SHUT THE FUCK UP! ALL THIS BLOOP! BLOOP! BLAH! BLAH! HOW ABOUT YOU LET ME WALK IN PEACE!?"
+   
+    hide john
+    show toilet idle
+    T "Bloop"
+    #$ renpy.layer_at_list([blur_on], layer='screens')
+    hide toilet
+<<<<<<< HEAD
+    show john frustrated
+    J "NO! I HAVE DEALT WITH NOTHING BUT STUPID SHIT ALL DAY! IF YOU THINK I AM NOT WILLING TO BREAK SOME SHIT I WILL!"
+    $ renpy.layer_at_list([blur_off], layer='screens')
+=======
+    show john annoyed
+    J "NO! I HAVE DEALT WITH NOTHING BUT STUPID SHIT ALL DAY! IF YOU THINK I AM NOT WILLING TO BREAK SOMETHING I WILL!"
+    #$ renpy.layer_at_list([blur_off], layer='screens')
+>>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
+    hide john
+    show toilet idle
+    T "Bloop"
+    hide toilet
+    show john annoyed
+    Ji "This toilet was something sent to piss me off. It doesn't fucking shut up! It keeps making all this goddamn noise!"
+    Ji "All I want is some peace in this rotting shit hole of a house but, that is nigh impossible."
+    "..."
+    Ji "Silence there was. It was just me, and this stupid toilet."
+    jump Shit_Faced
+
+label Shit_Faced:
+    J "You like pissing people off or is this something special just for me?"
+    hide john
+    show toilet idle
+    T "Bloop"
+    #$ renpy.layer_at_list([blur_on], layer='screens')
+    hide toilet
+<<<<<<< HEAD
+    show john frustrated
+    J "HAHAHAHAHAHAHA! I'm actually going insane... I'm talking to a fucking toilet like it can actually talk."
+    $ renpy.layer_at_list([blur_off], layer='screens')
+=======
+    show john annoyed
+    J " HAHAHAHAHAHAHA! I'm actually going insane... I'm talking to a fucking toilet like it can actually talk."
+    #$ renpy.layer_at_list([blur_off], layer='screens')
+>>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
+    hide john
+    show toilet idle
+    T "Bloop Bloop"
+    hide toilet
+    show john idle
+    J "If you can understand what I'm saying, bubble five time."
+    hide john
+    show toilet idle
+    T "Bloop Bloop Bloop Bloop Bloop"
+    "..."
+    hide toilet
+    show john surprised
+    J "Oh what th-"
+    hide john
+    show toilet idle
+    T "Bloop"
+    hide toilet
+<<<<<<< HEAD
+    show john annoyed
+    J "Oh. You're the bitchy type of ghost... I mumbled"
+    jump English_Please
+
+label English_Please:
+    show john surprised
+    J "What the fuck was it... Uh, Oh yeah! Ouija board shit... Bubbles... Bubble once for yes, and two for no."
+=======
+    show john idle
+    J "Oh. You're the bitchy type of ghost..."
+    jump English_Please
+
+label English_Please:
+    J "What the fuck was it... Uh, Oh yeah! Ouija board... Bubbles... Bubble once for yes, and two for no."
+>>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
+    J "Why are you pissing me off?"
+    hide john
+    show toilet idle
+    T "Swoosh"
+    hide toilet
+    show john frustrated
+    J "Motherfucker! I said BUBBLES! YES! OR NO!"
+    show john idle
+    J " Deep breathes... Okay... did you intentionally piss me off?"
+    hide john
+    show toilet idle    
+    T "Bloop"
+    hide toilet
+    show john annoyed
+    J "Bitch. Why? Fuck... That's on me. Are you an evil ghost?" 
+    hide john
+    show toilet idle 
+    T "Bloop Bloop"
+    hide toilet
+    show john idle
+    J "That's a fucking lie."
+    hide john
+    show toilet idle 
+    T "Bloop Bloop"
+    jump Magic_Toilet
+
+label Magic_Toilet:
+    hide toilet
+    show john idle
+    J "Why are you here?"
+    hide john
+    show toilet idle 
+    T "Flush"
+    hide toilet
+    show john idle
+    J "Uh, are you from here?"
+    hide john
+    show toilet idle 
+    T "Bloop bloop"
+    hide toilet
+    show john idle
+    J "Are you a demon?"
+    hide john
+    show toilet idle 
+    T "Bloop bloop"
+    hide toilet
+    show john idle
+    J "Why does this place suck ass?"
+    hide john
+    show toilet idle 
+    T "Bloop"
+    hide toilet
+    show john idle
+    J "... You don't like this place?"
+    hide john
+    show toilet idle 
+    T "Bloop"
+    hide toilet
+    show john idle
+    J "Did you break my car?"
+    hide john
+    show toilet idle 
+    T "Bloop bloop"
+    hide toilet
+    show john idle
+    J "Fuck... are there more haunted things or ghosts here?"
+    T "Bloop"
+    jump Constipation
+
+label Constipation:
+    Ji "I was so focused on this toilet that I didn't hear the rain stop. My mind was racing. What other ghost's existed here?"
+    J "Is there a ghost after me?"
+    hide john
+    show toilet idle 
+    T "Bloop"
+    hide toilet
+    show john idle
+    J "Can I fight it?"
+    hide john
+    show toilet idle 
+    T "Swoosh"
+    hide toilet
+    show john annoyed
+    J "Shit. Uh, can I live till the mechanic arrives?"
+    "..."
+    J "Answer me toilet!"
+    hide john
+    show toilet bloody 
+    T "Bloop Bloop"
+    hide toilet
+    show john idle
+    J "This can't be happening."
+    Ji "I began pacing back and forth. I then realized the rain had stopped."
+    jump Dogwater
+
+label Dogwater:
+    Ji "Seeing my chance to get out I dashed for door."
+    hide john
+    show toilet idle 
+    T "BLOOP BLOOP"
+    hide toilet
+    show john idle
+    Ji "I slammed against the front door trying to open it. I grabbed the door knob but it wouldn't budge."
+    Ji "In my panicked state I couldn't hear the strange noises coming from outside the door. It sounded like bubbles. A lot of bubbles."
+    hide john
+    show toilet idle 
+    T "BLOOP BLOOP"
+    hide toilet
+    show john idle
+    J "WHAT TOILET? I NEED TO GET OUT NOW I'M GOING TO DIE!"
+    hide john
+    show toilet idle 
+    T "BLOOP BLOOP"
+    hide toilet
+    show john idle
+    D "Oh Dear is it locked? Let me help." with dissolve
+    window hide
+    "creak... BOOM"
+    hide toilet
+    show john injured
+    Ji" Before I realized it I was hit with an immense torrent of water that started slicing through the house. My body was crushed from the force of the water."
+    D "Finch... Making them struggle will never work." with dissolve
+    window hide
+    jump Clogged
+
+label Clogged:
+
+<<<<<<< HEAD
+    show john injured
+    Ji "It's cold. I was running and then I got crushed."
+    hide john
+    show toilet bloody 
+    T "Bloop"
+    hide toilet
+    show john injured
+    Ji "You can hear me thinking?"
+    hide john
+    show toilet bloody 
+    T "Bloop"
+    hide toilet
+    show john injured
+    J "Am I dead?"
+    hide john
+    show toilet bloody 
+    T "Bloop"
+    hide toilet
+    show john injured
+    Ji "So heaven and hell are real?"
+    hide john
+    show toilet bloody 
+    T "Bloop Bloop"
+    hide toilet
+    show john injured
+    Ji "Then where are we?"
+    hide john
+    show toilet bloody 
+    T "Flush"
+    hide toilet
+    show john injured
+    Ji "Is there anything to do here?"
+    hide john
+    show toilet bloody 
+    T "Bloop"
+=======
+    show john idle
+    Dj "It's cold. I was struggling, and then I got crushed."
+    hide john
+    show toilet idle 
+    Dt "Bloop"
+    hide toilet
+    show john idle
+    Dj "You can hear me thinking?"
+    hide john
+    show toilet idle 
+    Dt "Bloop"
+    hide toilet
+    show john idle
+    Dj "Am I dead?"
+    hide john
+    show toilet idle 
+    Dt "Bloop"
+    hide toilet
+    show john idle
+    Dj "So heaven and hell are real?"
+    hide john
+    show toilet idle 
+    Dt "Bloop Bloop"
+    hide toilet
+    show john idle
+    Dj "Then where are we?"
+    hide john
+    show toilet idle 
+    Dt "Flush"
+    hide toilet
+    show john idle
+    Dj "Is there anything to do here?"
+    hide john
+    show toilet idle 
+    Dt "Bloop"
+>>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
+    hide toilet
+    D "Darkness holds every answer. Darkness hides all. No matter how far they may go. Darkness is all there is in the abyss." with dissolve
+    window hide
+    return
+
+
+#-----------------------------------------------
+#-- Toilet Route End
+#-----------------------------------------------
+
+#-----------------------------------------------
+#-- Chair Route Start
+#-----------------------------------------------
+
+label Foreboding:
+    scene bg chair
+    show john annoyed
+    Ji "I can't stand this. I can't stand the absolute emptiness of this place."
+    show john idle
+    Ji "I paced quickly to the living room to grab a chair and dragged it over to the window."
+    show john frustrated
+    Ji "The noise it made against the wood was frustrating; just like my resentment for this place."
+    show john idle
+    Ji "I set it up to look out the window but, did I really wish to do so? Was this really all I could do?"
+    jump Party_for_One
+
+label Party_for_One:
+    show john idle
+    Ji "I sat down and stared out the window. The rain was soothing. A mild distraction from the ever encompassing anxiety of this place."
+    Ji "For a moment, I had felt peace. Peace in the fact that this chair was front row seat to my execution."
+    Ji "As I watched the rain from the window something was darting for the window."
+    Ji "First it was nothing."
+    scene bg chairbloody
+    show john injured
+    Ji "next it was dot."
+    Ji "finally, an eyeshot."
+    Ji "Who was it? I wish I knew..."
+    "One thing did know what it was. The House did. There on the floor laid a metal ball bearing inlain in gore."
+    return
+
+
+
+#-----------------------------------------------
+#-- Chair Route End
+#-----------------------------------------------
+
+
+    
