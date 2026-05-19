@@ -57,7 +57,7 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "Roman_New_Times.otf"
 
 ## The font used for character names.
 define gui.name_text_font = "DejaVuSans.ttf"
@@ -72,10 +72,10 @@ define gui.text_size = 33
 define gui.name_text_size = 45
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 50
+define gui.interface_text_size = 60
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 50
+define gui.label_text_size = 80
 
 ## The size of text on the notify screen.
 define gui.notify_text_size = 50
@@ -209,7 +209,7 @@ define gui.choice_button_height = None
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = "fonts/XTypewriter-Bold.ttf"
-define gui.choice_button_text_size = 40
+define gui.choice_button_text_size = 50
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = '#888888'
 define gui.choice_button_text_hover_color = "#ffffff"
@@ -226,7 +226,7 @@ define gui.choice_button_text_insensitive_color = '#8888887f'
 define gui.slot_button_width = 414
 define gui.slot_button_height = 309
 define gui.slot_button_borders = Borders(15, 15, 15, 15)
-define gui.slot_button_text_size = 21
+define gui.slot_button_text_size = 50
 define gui.slot_button_text_xalign = 0.5
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color

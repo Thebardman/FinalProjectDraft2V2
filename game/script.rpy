@@ -78,9 +78,8 @@ label Empty_Thoughts:
         "Pace Around?":
             jump Pace_Maker
         "Get a Chair?":
-            call Foreboding
+            jump Foreboding
         #This would be the ending for the chair route.
-    ""
     return
 
 
@@ -102,17 +101,13 @@ label The_Cabinets:
     jump Ol_Times
 
 label Ol_Times:
-<<<<<<< HEAD
-    Ji "The Art of Baking 100 Different Cakes by Mary DeLou"
     show john annoyed
-=======
     Ji "{font=fonts/LTMuseum-MediumItalic.ttf}The Art of Baking 100 Different Cakes by Mary DeLou{/font}"
->>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
     J "You got to be fucking with me... Who the fuck owns a recipe book, when you don't have shit for fucking miles!?"
     Ji "Add the fact that I'm hungry as shit and the only thing in this damn house are old cans preserved fruits and veggies that look older than dinosaur shit."
     show john idle
     J "Breathe... Breathe...Read the damn book and move onto the next."
-    Ji "If it wasn't for the fact that I had lost my shit, this would have been perfect reading weather."
+    Ji "If it wasn't for the fact that I had lost my sanity, this would have been perfect reading weather."
     Ji "To spite myself even more I walked into the kitchen to read this book."
     jump Meat_Poundcake
 
@@ -184,21 +179,18 @@ label Pace_Maker:
     show john idle
     Ji "I paced around the entire house relentlessly. The rain did not stop." 
     Ji "My boredom never waning. My patience, at rock bottom."
-<<<<<<< HEAD
-    $ renpy.layer_at_list([blur_on], layer='screens')
+ 
     show john frustrated
     J "{b}AHHHHH! WHY! WHY DID i ACCEPT TO COME TO THIS STUPID PLACE?! NOTHING ABOUT THIS PLACE MAKES SENSE.{/b}"
     J "{b}WHY THE FUCK DO WE OWN SOME RANDOM VALLEY IN THE MIDDLE OF NOWHERE!{/b}"
-    $ renpy.layer_at_list([blur_off], layer='screens')
+
     Ji "Nothing made sense. It never did. From the stat of arriving here, to my car car breaking down"
-=======
     
     show john annoyed
     J "AHHHHH! WHY! WHY DID i ACCEPT TO COME TO THIS STUPID PLACE?! NOTHING ABOUT THIS PLACE MAKES SENSE."
     J "WHY THE FUCK DO WE OWN SOME RANDOM VALLEY IN THE MIDDLE OF NOWHERE!"
    
     Ji "Nothing made sense. It never did. From the start of arriving here, to my car car breaking down"
->>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
     #Queue toilet flushing
     T "Flush"
     Ji "If matters were not worse, the toilet is being used by a ghost. Not that it made my life any better."
@@ -273,29 +265,18 @@ label One_Or_Two:
     jump Potty_Mouth
 
 label Potty_Mouth:
-<<<<<<< HEAD
-    show john frustrated
-    $ renpy.layer_at_list([blur_on], layer='screens')
-=======
     show john annoyed
     
->>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
     J "SHUT THE FUCK UP! ALL THIS BLOOP! BLOOP! BLAH! BLAH! HOW ABOUT YOU LET ME WALK IN PEACE!?"
    
     hide john
     show toilet idle
     T "Bloop"
-    #$ renpy.layer_at_list([blur_on], layer='screens')
+
     hide toilet
-<<<<<<< HEAD
-    show john frustrated
-    J "NO! I HAVE DEALT WITH NOTHING BUT STUPID SHIT ALL DAY! IF YOU THINK I AM NOT WILLING TO BREAK SOME SHIT I WILL!"
-    $ renpy.layer_at_list([blur_off], layer='screens')
-=======
     show john annoyed
     J "NO! I HAVE DEALT WITH NOTHING BUT STUPID SHIT ALL DAY! IF YOU THINK I AM NOT WILLING TO BREAK SOMETHING I WILL!"
-    #$ renpy.layer_at_list([blur_off], layer='screens')
->>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
+
     hide john
     show toilet idle
     T "Bloop"
@@ -312,17 +293,9 @@ label Shit_Faced:
     hide john
     show toilet idle
     T "Bloop"
-    #$ renpy.layer_at_list([blur_on], layer='screens')
     hide toilet
-<<<<<<< HEAD
     show john frustrated
     J "HAHAHAHAHAHAHA! I'm actually going insane... I'm talking to a fucking toilet like it can actually talk."
-    $ renpy.layer_at_list([blur_off], layer='screens')
-=======
-    show john annoyed
-    J " HAHAHAHAHAHAHA! I'm actually going insane... I'm talking to a fucking toilet like it can actually talk."
-    #$ renpy.layer_at_list([blur_off], layer='screens')
->>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
     hide john
     show toilet idle
     T "Bloop Bloop"
@@ -340,22 +313,15 @@ label Shit_Faced:
     show toilet idle
     T "Bloop"
     hide toilet
-<<<<<<< HEAD
     show john annoyed
     J "Oh. You're the bitchy type of ghost... I mumbled"
     jump English_Please
 
-label English_Please:
-    show john surprised
-    J "What the fuck was it... Uh, Oh yeah! Ouija board shit... Bubbles... Bubble once for yes, and two for no."
-=======
-    show john idle
-    J "Oh. You're the bitchy type of ghost..."
-    jump English_Please
+
 
 label English_Please:
+    show john surprised
     J "What the fuck was it... Uh, Oh yeah! Ouija board... Bubbles... Bubble once for yes, and two for no."
->>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
     J "Why are you pissing me off?"
     hide john
     show toilet idle
@@ -476,87 +442,49 @@ label Dogwater:
     "creak... BOOM"
     hide toilet
     show john injured
-    Ji" Before I realized it I was hit with an immense torrent of water that started slicing through the house. My body was crushed from the force of the water."
+    Dj " Before I realized it I was hit with an immense torrent of water that started slicing through the house. My body was crushed from the force of the water."
     D "Finch... Making them struggle will never work." with dissolve
     window hide
     jump Clogged
 
 label Clogged:
 
-<<<<<<< HEAD
     show john injured
-    Ji "It's cold. I was running and then I got crushed."
+    Dj "It's cold. I was running and then I got crushed."
     hide john
     show toilet bloody 
-    T "Bloop"
-    hide toilet
-    show john injured
-    Ji "You can hear me thinking?"
-    hide john
-    show toilet bloody 
-    T "Bloop"
-    hide toilet
-    show john injured
-    J "Am I dead?"
-    hide john
-    show toilet bloody 
-    T "Bloop"
-    hide toilet
-    show john injured
-    Ji "So heaven and hell are real?"
-    hide john
-    show toilet bloody 
-    T "Bloop Bloop"
-    hide toilet
-    show john injured
-    Ji "Then where are we?"
-    hide john
-    show toilet bloody 
-    T "Flush"
-    hide toilet
-    show john injured
-    Ji "Is there anything to do here?"
-    hide john
-    show toilet bloody 
-    T "Bloop"
-=======
-    show john idle
-    Dj "It's cold. I was struggling, and then I got crushed."
-    hide john
-    show toilet idle 
     Dt "Bloop"
     hide toilet
-    show john idle
+    show john injured
     Dj "You can hear me thinking?"
     hide john
-    show toilet idle 
+    show toilet bloody 
     Dt "Bloop"
     hide toilet
-    show john idle
+    show john injured
     Dj "Am I dead?"
     hide john
-    show toilet idle 
+    show toilet bloody 
     Dt "Bloop"
     hide toilet
-    show john idle
+    show john injured
     Dj "So heaven and hell are real?"
     hide john
-    show toilet idle 
+    show toilet bloody 
     Dt "Bloop Bloop"
     hide toilet
-    show john idle
+    show john injured
     Dj "Then where are we?"
     hide john
-    show toilet idle 
+    show toilet bloody 
     Dt "Flush"
     hide toilet
-    show john idle
+    show john injured
     Dj "Is there anything to do here?"
     hide john
-    show toilet idle 
+    show toilet bloody 
     Dt "Bloop"
->>>>>>> 85fead18c4c6bd1d9a98b0b4b101d3873e028d23
-    hide toilet
+    hide toilet bloody
     D "Darkness holds every answer. Darkness hides all. No matter how far they may go. Darkness is all there is in the abyss." with dissolve
     window hide
     return
@@ -592,8 +520,9 @@ label Party_for_One:
     show john injured
     Ji "next it was dot."
     Ji "finally, an eyeshot."
-    Ji "Who was it? I wish I knew..."
-    "One thing did know what it was. The House did. There on the floor laid a metal ball bearing inlain in gore."
+    Dj "Who was it? I wish I knew..."
+    D "Not my finest work but, enjoyable indeed." with dissolve
+    window hide
     return
 
 
