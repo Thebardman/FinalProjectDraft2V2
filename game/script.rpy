@@ -2,11 +2,7 @@
 # name of the character.
 
 # This defines the blur effect so Ren'Py knows what it is
-transform blur_on:
-    blur 10.0
 
-transform blur_off:
-    blur 0.0
 #Main character but his inner thoughts are italicized
 define Ji = Character("John",color = "#25AD2E", who_font ="fonts/atwriter.ttf",who_size = 60 , what_font="fonts/atwriter.ttf", what_italic=True)
 define J = Character("John", color = "#25AD2E", who_font ="fonts/atwriter.ttf", who_size = 60 ,what_font="fonts/atwriter.ttf")
@@ -30,7 +26,23 @@ define D = Character(None,
     what_outlines=[(2, "#000", 0, 0)],    # Adds a black outline so it's readable over any BG
     what_color="#930707ce", what_font="fonts/Roman_New_Times.otf", what_size = 100
 )
+#Complex characters
+define Dj2 = Character(None, 
+    window_yalign=0.5, 
+    what_xalign=0.5, 
+    what_text_align=0.5,
+    window_background=None,
+    what_yalign=0.5,             # Centers vertically
+    what_outlines=[(2, "#000", 0, 0)],    # Adds a black outline so it's readable over any BG
+    what_color="#196d1f", what_font="fonts/XTypewriter-Bold.ttf", what_size = 100
+)
 # The game starts here.
+
+#Variables for cutting off choices
+default CabinetBranch = True
+default ChairBranch = True
+default ToiletBranch = True
+default RunCount = 0
 
 label start:
 #Play rain noises or something
@@ -63,7 +75,7 @@ label The_Forgotten:
     jump Empty_Thoughts
 
 label Empty_Thoughts:
-
+    scene bg livingroom
     show john annoyed
     Ji "I stared at the brown phone. It was my siren's call. This dinky rotary phone straight out of the 70's."
     J " God I hate how brown this thing is..."
@@ -73,13 +85,12 @@ label Empty_Thoughts:
 
     J "There has to be something to do here..."
     menu:
-        "Look for a Book?":
+        "Look for a Book?" if CabinetBranch:
             jump The_Cabinets
-        "Pace Around?":
+        "Pace Around?" if ToiletBranch:
             jump Pace_Maker
-        "Get a Chair?":
+        "Get a Chair?" if ChairBranch:
             jump Foreboding
-        #This would be the ending for the chair route.
     return
 
 
@@ -151,12 +162,10 @@ label With_Elbow_Grease:
     J "Oh F-" 
     Ji "I was immediately slammed repeatedly against the stove with no chance of escape."
     scene bg kitchenbloody
-    "The kitchen was painted {color=#B31F05}red{/color}. In the heat of cooking mistakes always happen. Some, greater than others..."
+    D "The kitchen was painted {color=#B31F05}red{/color}. In the heat of cooking mistakes always happen. Some, greater than others..." with dissolve
+    scene black with fade
     jump Fit_For_All
 
-#-----------------------------------------------
-#-- Book Route end
-#-----------------------------------------------
 
 label Fit_For_All:
     show john injured
@@ -168,7 +177,13 @@ label Fit_For_All:
     Ji "When nothing else would." 
     Ji "{color=#752B24}A fucking toilet.{/color}"
     
-    return
+    $CabinetBranch = False
+    $RunCount += 1
+    jump Abyss
+
+#-----------------------------------------------
+#-- Book Route end
+#-----------------------------------------------
 
 #-----------------------------------------------
 #-- Toilet Route start
@@ -439,7 +454,7 @@ label Dogwater:
     show john idle
     D "Oh Dear is it locked? Let me help." with dissolve
     window hide
-    "creak... BOOM"
+    "{size=80}creak... BOOM{/size}"
     hide toilet
     show john injured
     Dj " Before I realized it I was hit with an immense torrent of water that started slicing through the house. My body was crushed from the force of the water."
@@ -485,10 +500,13 @@ label Clogged:
     show toilet bloody 
     Dt "Bloop"
     hide toilet bloody
+    scene black with fade
     D "Darkness holds every answer. Darkness hides all. No matter how far they may go. Darkness is all there is in the abyss." with dissolve
     window hide
-    return
-
+    
+    $ToiletBranch = False
+    $RunCount += 1
+    jump Abyss
 
 #-----------------------------------------------
 #-- Toilet Route End
@@ -521,9 +539,12 @@ label Party_for_One:
     Ji "next it was dot."
     Ji "finally, an eyeshot."
     Dj "Who was it? I wish I knew..."
+    scene black with fade
     D "Not my finest work but, enjoyable indeed." with dissolve
     window hide
-    return
+    $ChairBranch = False
+    $RunCount += 1
+    jump Abyss
 
 
 
@@ -531,5 +552,19 @@ label Party_for_One:
 #-- Chair Route End
 #-----------------------------------------------
 
-
-    
+#-----------------------------------------------
+#-- Enter Abyss
+#-----------------------------------------------
+label Abyss:
+    if RunCount == 1:
+        Dj2 "Is there really something out here?"
+        scene black with fade
+        jump Empty_Thoughts
+    elif RunCount == 2:
+        Dj2 "I'm not dead. I'm not dead. I'm not dead. I'm not dead. I'm not dead. I'm not dead."
+        scene black with fade
+        jump Empty_Thoughts
+    elif RunCount ==3:
+        Dj2 "What is it you are waiting for? Leave me alone..."
+        scene black with fade
+        return

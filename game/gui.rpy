@@ -66,7 +66,7 @@ define gui.name_text_font = "DejaVuSans.ttf"
 define gui.interface_text_font = "Roman_New_Times.otf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 33
+define gui.text_size = 35
 
 ## The size of character names.
 define gui.name_text_size = 45
@@ -189,7 +189,7 @@ define gui.confirm_button_text_xalign = 0.5
 define gui.page_button_borders = Borders(15, 6, 15, 6)
 
 define gui.quick_button_borders = Borders(15, 6, 15, 0)
-define gui.quick_button_text_size = 21
+define gui.quick_button_text_size = 37
 define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color
 
