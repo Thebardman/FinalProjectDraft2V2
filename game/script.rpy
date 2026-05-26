@@ -49,6 +49,7 @@ label start:
 
     scene bg starting
     
+    play music "audio/rainBackground_1.wav" volume 0.2
     
     N "The rain was heavy. Each drop tearing through the valley."
     N "This lone house existed in the valley. The only semblance of hospitality."
@@ -107,6 +108,7 @@ label The_Cabinets:
     show john frustrated
     J "Why? Why do you put it there?"
     show john idle
+    play sound "audio/rummagingThroughBooks_1.wav" volume 0.5
     Ji "As I looked up there there were, a set of books."
     Ji "I found something to finally free myself from this place."
     jump Ol_Times
@@ -120,11 +122,13 @@ label Ol_Times:
     J "Breathe... Breathe...Read the damn book and move onto the next."
     Ji "If it wasn't for the fact that I had lost my sanity, this would have been perfect reading weather."
     Ji "To spite myself even more I walked into the kitchen to read this book."
+    play sound "audio/flippingPagesInBook_1.wav" volume 0.5
     jump Meat_Poundcake
 
 label Meat_Poundcake:
     Ji "I sat at the table beginning at the table of contents. Vanilla, Chocolate, Strawberry, Mixed Berry...\"Meat\"?"
     show john surprised
+    play sound "audio/flippingPagesInBook_1.wav" volume 0.5
     J  "What? It can't be real. Page 59..."
     J "To start the meat poundcake you first need an assortment of red colored fruits. Begin by mashing the..."
     Ji "And I'm done with that. Really had me scared of what the hell this damn cake was."
@@ -144,6 +148,7 @@ label With_Elbow_Grease:
     show john idle
     Ji "There are at the entry to the kitchen stood a thing I had never seen. It was a wax person with a melted exterior."
     hide john
+    play sound "audio/grandmaScreech_1.wav" volume 0.5    
     show grandma hunting
     M "The first step is acquire red fruit."
     hide grandma
@@ -435,20 +440,20 @@ label Constipation:
 label Dogwater:
     Ji "Seeing my chance to get out I dashed for door."
     hide john
-    show toilet idle 
+    show toilet bloody 
     T "BLOOP BLOOP"
     hide toilet
     show john idle
     Ji "I slammed against the front door trying to open it. I grabbed the door knob but it wouldn't budge."
     Ji "In my panicked state I couldn't hear the strange noises coming from outside the door. It sounded like bubbles. A lot of bubbles."
     hide john
-    show toilet idle 
+    show toilet bloody 
     T "BLOOP BLOOP"
     hide toilet
     show john idle
     J "WHAT TOILET? I NEED TO GET OUT NOW I'M GOING TO DIE!"
     hide john
-    show toilet idle 
+    show toilet bloody 
     T "BLOOP BLOOP"
     hide toilet
     show john idle
