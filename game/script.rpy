@@ -45,6 +45,16 @@ default ToiletBranch = True
 default RunCount = 0
 
 label start:
+# This is warning at the beginning so people know what they are getting into
+    Dj2 "{color=#ffffff}WARNING{/color}" 
+    Dj2 "{color=#ffffff}{size=80} This game has themes of insanity, death, thalossophobia, torture, and vulgar language.{/color}{/size}"
+    Dj2 "{color=#ffffff}{size=80} Depictions may include: blood, gore, feces, uncomfortable noises, and ghosts. {/color}{/size}"
+    Dj2 "{color=#ffffff}{size=80} Viewer discretion is advised.  {/color}{/size}"
+
+
+
+
+label Beginning:
 #Play rain noises or something
 
     scene bg starting
@@ -58,7 +68,6 @@ label start:
    
     jump The_Forgotten
     hide bg starting
-
 label The_Forgotten:
 
     scene bg livingroom
@@ -150,7 +159,7 @@ label With_Elbow_Grease:
     hide john
     play sound "audio/grandmaScreech_1.wav" volume 0.5    
     show grandma hunting
-    M "The first step is acquire red fruit."
+    M "The first step is to acquire red fruit."
     hide grandma
     show john frustrated
     Ji "I got up from the chair and backed away only to get charged by the creature."
@@ -161,14 +170,69 @@ label With_Elbow_Grease:
     J "I couldn't speak, nor could I fight back."
     hide john
     show grandma hunting
-    M "Next you mash the berries to a pulp"
+    M "Remember to always wash your fruit."
+    hide grandma hunting
+    show john injured
+    Ji "I felt a sudden pull and this crazy lady began flying to the other side of the house. Her grip on my throat not loosening at all"
+    hide john injured
+    jump Face_wash
+
+label Face_wash:
+    show bg bathroom
+    show john injured
+    Ji "This ghost lady then stopped in front of the bathroom."
+    Ji "The door was thrust open and I realized what she was going to do."
+    hide john injured
+    show grandma hunting
+    M   " This giant bowl will do."
+    hide grandma hunting
+    show john injured
+    J "NO! NO! NO! NO! NO!"
+    hide john
+    show toilet idle
+    Ji "I felt myself getting thrust face first into the toilet bowl and being drowned in the water."
+    Ji "After a few seconds the ghost lady pulled my face back out"
+    hide toilet
+    show grandma hunting
+    M "hmm... Not enough."
+    hide grandma 
+    show john injured
+    J "Please..."
+    hide john
+    show toilet idle
+    Ji "I was thrust back into the toilet. My lungs were on fire from the lack oxygen, and my constant struggle under this psychopath's grasp."
+    hide toilet
+    show john injured
+    J "Stop...Please..."
+    hide john
+    show grandma idle
+    M "hmm... Good enough."
+    hide grandma
+    show toilet bloody
+    Ji "The toilet was covered in my blood. I felt sick from the sight and the drowning I endured."
+    hide toilet
+    show john injured
+    Ji "We began to fly out of the bathroom and now to somewhere else. My life felt voilated beyond comprehension."
+    hide john
+    jump Fruit_mash
+
+
+label Fruit_mash:
+    show bg kitchen
+    show grandma idle
+    M "Now that your fruit is all clean, we begin the next step."
+    hide grandma
+    show grandma hunting
+    M "You {b}mash{/b} the berries to a pulp"
     hide grandma
     show john injured
-    J "Oh F-" 
-    Ji "I was immediately slammed repeatedly against the stove with no chance of escape."
+    J "please... I'm..." 
+    Ji "I blacked out immediately  upon being slammed repeatedly against the stove with no chance of escape. "
+    
     scene bg kitchenbloody
     D "The kitchen was painted {color=#B31F05}red{/color}. In the heat of cooking mistakes always happen. Some, greater than others..." with dissolve
     scene black with fade
+
     jump Fit_For_All
 
 

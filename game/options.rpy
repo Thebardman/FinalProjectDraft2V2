@@ -29,10 +29,31 @@ define gui.show_name = False
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _("""
+{b}{size=+10}THE THRONE - CREDITS{/size}{/b}\n
+
+{b}Story & Writing{/b}
+Jose Romero
+ Bardia Soltani\n
+
+{b}Programming & Visual Effects{/b}
+Jose Romero
+Bardia Soltani\n 
+
+{b}Music & Sound Effects{/b}
+Jacob Jason
+Eytan Lapan\n
+
+{b}Fonts Credits{/b}
+Another Typewriter - Johan Holmdahl
+El Fin del Cielo - Ce - al
+LT Museum - LyonsType
+Roman New Times - Winty5
+Times New Yorker - GRAFFILIA FETEN
+X Typewriter - GGBotNet \n
+
+Thank you so much for playing!
 """)
-
-
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
