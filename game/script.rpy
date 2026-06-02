@@ -147,6 +147,7 @@ label Meat_Poundcake:
     hide grandma
     show john surprised
     J "Huh who's there?"
+    play sound "audio/heartbeatCrescendo.wav" volume 1.0
     hide john
     show grandma idle
     M "If you are going to read a recipe, you might as well see it through the end dear."
@@ -157,7 +158,7 @@ label With_Elbow_Grease:
     show john idle
     Ji "There are at the entry to the kitchen stood a thing I had never seen. It was a wax person with a melted exterior."
     hide john
-    play sound "audio/grandmaScreech_1.wav" volume 0.5    
+    play sound "audio/grandmaScreech_1.wav" volume 0.5
     show grandma hunting
     M "The first step is to acquire red fruit."
     hide grandma
@@ -226,7 +227,8 @@ label Fruit_mash:
     M "You {b}mash{/b} the berries to a pulp"
     hide grandma
     show john injured
-    J "please... I'm..." 
+    J "please... I'm..."
+    play sound "audio/bangingOnCabinet.wav" 
     Ji "I blacked out immediately  upon being slammed repeatedly against the stove with no chance of escape. "
     
     scene bg kitchenbloody
@@ -476,6 +478,7 @@ label Magic_Toilet:
     jump Constipation
 
 label Constipation:
+    play music "audio/heartbeatCrescendo.wav" volume 0.7
     Ji "I was so focused on this toilet that I didn't hear the rain stop. My mind was racing. What other ghost's existed here?"
     J "Is there a ghost after me?"
     hide john
