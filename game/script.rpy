@@ -147,7 +147,7 @@ label Meat_Poundcake:
     hide grandma
     show john surprised
     J "Huh who's there?"
-    play sound "audio/heartbeatCrescendo.wav" volume 1.0
+    play sound heartbeatCrescendo volume 1.0
     hide john
     show grandma idle
     M "If you are going to read a recipe, you might as well see it through the end dear."
@@ -478,7 +478,7 @@ label Magic_Toilet:
     jump Constipation
 
 label Constipation:
-    play music "audio/heartbeatCrescendo.wav" volume 0.7
+    play music "audio/heartbeatCrescendo.wav" volume 1.0
     Ji "I was so focused on this toilet that I didn't hear the rain stop. My mind was racing. What other ghost's existed here?"
     J "Is there a ghost after me?"
     hide john
