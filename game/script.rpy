@@ -59,8 +59,9 @@ label Beginning:
 
     scene bg starting
     
-    play music "audio/rainBackground_1.wav" volume 0.2
-    
+    play music abyss_song_1 volume 1
+
+
     N "The rain was heavy. Each drop tearing through the valley."
     N "This lone house existed in the valley. The only semblance of hospitality."
     N "It was a meticulous trap laid by its creator. Just for me..."
@@ -117,7 +118,7 @@ label The_Cabinets:
     show john frustrated
     J "Why? Why do you put it there?"
     show john idle
-    play sound "audio/rummagingThroughBooks_1.wav" volume 0.5
+    play sound rummagingthroughbooks_1 volume 0.5
     Ji "As I looked up there there were, a set of books."
     Ji "I found something to finally free myself from this place."
     jump Ol_Times
@@ -131,13 +132,13 @@ label Ol_Times:
     J "Breathe... Breathe...Read the damn book and move onto the next."
     Ji "If it wasn't for the fact that I had lost my sanity, this would have been perfect reading weather."
     Ji "To spite myself even more I walked into the kitchen to read this book."
-    play sound "audio/flippingPagesInBook_1.wav" volume 0.5
+    play sound flippingpagesinbook_1 volume 0.5
     jump Meat_Poundcake
 
 label Meat_Poundcake:
     Ji "I sat at the table beginning at the table of contents. Vanilla, Chocolate, Strawberry, Mixed Berry...\"Meat\"?"
     show john surprised
-    play sound "audio/flippingPagesInBook_1.wav" volume 0.5
+    play sound flippingpagesinbook_1 volume 0.5
     J  "What? It can't be real. Page 59..."
     J "To start the meat poundcake you first need an assortment of red colored fruits. Begin by mashing the..."
     Ji "And I'm done with that. Really had me scared of what the hell this damn cake was."
@@ -147,7 +148,7 @@ label Meat_Poundcake:
     hide grandma
     show john surprised
     J "Huh who's there?"
-    play sound heartbeatCrescendo volume 1.0
+    play sound "audio/heartbeatcrescendo.mp3" volume 1.0
     hide john
     show grandma idle
     M "If you are going to read a recipe, you might as well see it through the end dear."
@@ -158,7 +159,7 @@ label With_Elbow_Grease:
     show john idle
     Ji "There are at the entry to the kitchen stood a thing I had never seen. It was a wax person with a melted exterior."
     hide john
-    play sound "audio/grandmaScreech_1.wav" volume 0.5
+    play sound grandmascreech_1 volume 0.5
     show grandma hunting
     M "The first step is to acquire red fruit."
     hide grandma
@@ -272,14 +273,14 @@ label Pace_Maker:
 
     Ji "Nothing made sense. It never did. From the stat of arriving here, to my car car breaking down"
     
-    show john annoyed
-    J "AHHHHH! WHY! WHY DID i ACCEPT TO COME TO THIS STUPID PLACE?! NOTHING ABOUT THIS PLACE MAKES SENSE."
-    J "WHY THE FUCK DO WE OWN SOME RANDOM VALLEY IN THE MIDDLE OF NOWHERE!"
-   
-    Ji "Nothing made sense. It never did. From the start of arriving here, to my car car breaking down"
+    hide john
+    show toilet idle
     #Queue toilet flushing
     T "Flush"
+    hide toilet
+    show john frustrated
     Ji "If matters were not worse, the toilet is being used by a ghost. Not that it made my life any better."
+    hide john
     jump Malfunction
 
 label Malfunction:
@@ -478,7 +479,6 @@ label Magic_Toilet:
     jump Constipation
 
 label Constipation:
-    play music "audio/heartbeatCrescendo.wav" volume 1.0
     Ji "I was so focused on this toilet that I didn't hear the rain stop. My mind was racing. What other ghost's existed here?"
     J "Is there a ghost after me?"
     hide john
