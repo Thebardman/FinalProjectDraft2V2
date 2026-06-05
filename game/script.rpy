@@ -49,7 +49,7 @@ label start:
     Dj2 "{color=#ffffff}WARNING{/color}" 
     Dj2 "{color=#ffffff}{size=80} This game has themes of insanity, death, thalossophobia, torture, and vulgar language.{/color}{/size}"
     Dj2 "{color=#ffffff}{size=80} Depictions may include: blood, gore, feces, uncomfortable noises, and ghosts. {/color}{/size}"
-    Dj2 "{color=#ffffff}{size=80} Viewer discretion is advised.  {/color}{/size}"
+    Dj2 "{color=#ffffff}{size=80} Play at your own risk.  {/color}{/size}"
 
 
 
@@ -147,7 +147,7 @@ label Meat_Poundcake:
     hide grandma
     show john surprised
     J "Huh who's there?"
-    play sound heartbeatcrescendo volume 1.0
+    play audio heartbeatcrescendo volume 1.0
     hide john
     show grandma idle
     M "If you are going to read a recipe, you might as well see it through the end dear."
@@ -243,6 +243,8 @@ label Fit_For_All:
     show john injured
     Ji "It felt like a joke... A toilet. Right there. Staring at me from the abyss."
     J " I... Why? Why the fuck am I seeing a toilet as my FINAL SENDOFF?!"
+    hide john
+    show toilet idle
     Ji "The gray ceramic toilet stood there. No noise, no sudden movement, perfectly still."
     Ji "I fell to my knees sobbing. But there was nothing to fall on but nothingness. No tears to be made."
     Ji "Yet there it stood. Never getting small or far away... It waited for me. "
@@ -269,7 +271,7 @@ label Pace_Maker:
     Ji "My boredom never waning. My patience, at rock bottom."
  
     show john frustrated
-    J "{b}AHHHHH! WHY! WHY DID i ACCEPT TO COME TO THIS STUPID PLACE?! NOTHING ABOUT THIS PLACE MAKES SENSE.{/b}"
+    J "{b}AHHHHH! WHY! WHY DID I ACCEPT TO COME TO THIS STUPID PLACE?! NOTHING ABOUT THIS PLACE MAKES SENSE.{/b}"
     J "{b}WHY THE FUCK DO WE OWN SOME RANDOM VALLEY IN THE MIDDLE OF NOWHERE!{/b}"
 
     Ji "Nothing made sense. It never did. From the stat of arriving here, to my car car breaking down"
@@ -330,8 +332,6 @@ label Going_Once:
     hide john
     show toilet idle
     play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop Bloop Bloop"
     hide toilet
     show john idle
@@ -349,8 +349,7 @@ label One_Or_Two:
     hide john
     show toilet idle
     play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
+    
     T "Bloop Bloop Bloop"
     hide toilet
     show john idle
@@ -401,17 +400,12 @@ label Shit_Faced:
     hide john
     show toilet idle
     play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop Bloop"
     hide toilet
     show john idle
     J "If you can understand what I'm saying, bubble five time."
     hide john
     show toilet idle
-    play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
     play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop Bloop Bloop Bloop Bloop"
     "..."
@@ -452,7 +446,6 @@ label English_Please:
     hide john
     show toilet idle 
     play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop Bloop"
     hide toilet
     show john idle
@@ -460,7 +453,7 @@ label English_Please:
     hide john
     show toilet idle 
     play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
+
     T "Bloop Bloop"
     jump Magic_Toilet
 
@@ -478,14 +471,13 @@ label Magic_Toilet:
     hide john
     show toilet idle 
     play sound "audio/regularflush_1.wav" volume 0.4
-    play sound "audio/regularflush_1.wav" volume 0.4
+
     T "Bloop bloop"
     hide toilet
     show john idle
     J "Are you a demon?"
     hide john
     show toilet idle 
-    play sound "audio/regularflush_1.wav" volume 0.4
     play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop bloop"
     hide toilet
@@ -507,7 +499,6 @@ label Magic_Toilet:
     J "Did you break my car?"
     hide john
     show toilet idle 
-    play sound "audio/regularflush_1.wav" volume 0.4
     play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop bloop"
     hide toilet
@@ -547,12 +538,15 @@ label Constipation:
     hide toilet
     show john idle
     J "This can't be happening."
+    stop music
     Ji "I began pacing back and forth. I then realized the rain had stopped."
     jump Dogwater
 
 label Dogwater:
     Ji "Seeing my chance to get out I dashed for door."
     hide john
+    hide bg bathroom
+    scene bg livingroom
     show toilet bloody 
     play sound "audio/thickbloodyflush_1.wav" volume 0.4
     T "BLOOP BLOOP"
@@ -584,7 +578,8 @@ label Dogwater:
     jump Clogged
 
 label Clogged:
-
+    hide bg livingroom
+    scene black with fade
     show john injured
     Dj "It's cold. I was running and then I got crushed."
     hide john
@@ -657,9 +652,10 @@ label Party_for_One:
     Ji "For a moment, I had felt peace. Peace in the fact that this chair was front row seat to my execution."
     Ji "As I watched the rain from the window something was darting for the window."
     Ji "First it was nothing."
+    Ji "next it was dot."
+    play audio glass_shatter_1 volume 0.8
     scene bg chairbloody
     show john injured
-    Ji "next it was dot."
     Ji "finally, an eyeshot."
     Dj "Who was it? I wish I knew..."
     scene black with fade
@@ -679,6 +675,7 @@ label Party_for_One:
 #-- Enter Abyss
 #-----------------------------------------------
 label Abyss:
+    scene black
     if RunCount == 1:
         Dj2 "Is there really something out here?"
         scene black with fade
