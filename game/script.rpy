@@ -59,9 +59,8 @@ label Beginning:
 
     scene bg starting
     
-    play music abyss_song_1 volume 1
-
-
+    play music "audio/rainBackground_1.wav" volume 0.08
+    
     N "The rain was heavy. Each drop tearing through the valley."
     N "This lone house existed in the valley. The only semblance of hospitality."
     N "It was a meticulous trap laid by its creator. Just for me..."
@@ -118,7 +117,7 @@ label The_Cabinets:
     show john frustrated
     J "Why? Why do you put it there?"
     show john idle
-    play sound rummagingthroughbooks_1 volume 0.5
+    play sound "audio/rummagingthroughbooks_1.wav" volume 0.8
     Ji "As I looked up there there were, a set of books."
     Ji "I found something to finally free myself from this place."
     jump Ol_Times
@@ -129,16 +128,16 @@ label Ol_Times:
     J "You got to be fucking with me... Who the fuck owns a recipe book, when you don't have shit for fucking miles!?"
     Ji "Add the fact that I'm hungry as shit and the only thing in this damn house are old cans preserved fruits and veggies that look older than dinosaur shit."
     show john idle
-    J "Breathe... Breathe...Read the damn book and move onto the next."
+    J "Breathe...  Breathe...Read the damn book and move onto the next."
     Ji "If it wasn't for the fact that I had lost my sanity, this would have been perfect reading weather."
     Ji "To spite myself even more I walked into the kitchen to read this book."
-    play sound flippingpagesinbook_1 volume 0.5
+    play sound "audio/flippingpagesinbook_1.wav" volume 0.8
     jump Meat_Poundcake
 
 label Meat_Poundcake:
     Ji "I sat at the table beginning at the table of contents. Vanilla, Chocolate, Strawberry, Mixed Berry...\"Meat\"?"
     show john surprised
-    play sound flippingpagesinbook_1 volume 0.5
+    play sound "audio/flippingpagesinbook_1.wav" volume 0.8
     J  "What? It can't be real. Page 59..."
     J "To start the meat poundcake you first need an assortment of red colored fruits. Begin by mashing the..."
     Ji "And I'm done with that. Really had me scared of what the hell this damn cake was."
@@ -148,7 +147,7 @@ label Meat_Poundcake:
     hide grandma
     show john surprised
     J "Huh who's there?"
-    play sound "audio/heartbeatcrescendo.mp3" volume 1.0
+    play sound heartbeatcrescendo volume 1.0
     hide john
     show grandma idle
     M "If you are going to read a recipe, you might as well see it through the end dear."
@@ -159,7 +158,7 @@ label With_Elbow_Grease:
     show john idle
     Ji "There are at the entry to the kitchen stood a thing I had never seen. It was a wax person with a melted exterior."
     hide john
-    play sound grandmascreech_1 volume 0.5
+    play sound "audio/grandma_screech_1.wav" volume 0.5
     show grandma hunting
     M "The first step is to acquire red fruit."
     hide grandma
@@ -190,6 +189,7 @@ label Face_wash:
     hide grandma hunting
     show john injured
     J "NO! NO! NO! NO! NO!"
+    play sound "audio/regularflush_1.wav" volume 0.8
     hide john
     show toilet idle
     Ji "I felt myself getting thrust face first into the toilet bowl and being drowned in the water."
@@ -229,7 +229,7 @@ label Fruit_mash:
     hide grandma
     show john injured
     J "please... I'm..."
-    play sound "audio/bangingOnCabinet.wav" 
+    play sound "audio/bangingoncabinet.wav" 
     Ji "I blacked out immediately  upon being slammed repeatedly against the stove with no chance of escape. "
     
     scene bg kitchenbloody
@@ -264,6 +264,7 @@ label Fit_For_All:
 label Pace_Maker:
     scene bg livingroom
     show john idle
+    play sound "audio/footstepsonwood_1.wav" volume 0.7
     Ji "I paced around the entire house relentlessly. The rain did not stop." 
     Ji "My boredom never waning. My patience, at rock bottom."
  
@@ -276,6 +277,7 @@ label Pace_Maker:
     hide john
     show toilet idle
     #Queue toilet flushing
+    play sound "audio/regularflush_1.wav" volume 0.8
     T "Flush"
     hide toilet
     show john frustrated
@@ -293,6 +295,7 @@ label Malfunction:
     J "What the hell is wrong with you? Is there some sort of backflow from the rain water causing something else to happen?"
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.8
     T "Bloop"
     hide toilet
     show john surprised
@@ -305,24 +308,30 @@ label Going_Once:
     Ji "Seeing as I didn't know what was exactly happening I tried flushing the toilet."
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Flush"
     hide toilet
     show john idle
     J "Well, you still work. I guess..."
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop"
     hide toilet
     show john idle
     Ji "The toilet once again bubbled. This toilet is weird; Just like this house. It's all either really old or, on the verge of collapse. With not much else to do I began going back to my pacing around."
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Swoosh"
     hide toilet
     show john idle
     Ji "I had only made my way out the bathroom only to hear it go off again."
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop Bloop Bloop"
     hide toilet
     show john idle
@@ -332,18 +341,23 @@ label One_Or_Two:
     Ji "I begun pacing once more throughout the house. If anything this was more entertaining than doing nothing."
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Flush"
     hide toilet
     show john idle
     Ji "The toilet kept flushing randomly now. I tried to act like it didn't exist but it would sudde-"
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop Bloop Bloop"
     hide toilet
     show john idle
     Ji "Like that. The toilet just kept making noise. I don't know what feels more annoying now, the lack of control over my situation or the ghost who keeps flushing my god damn toilet."
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Swoosh"
     hide toilet
     show john idle
@@ -358,14 +372,14 @@ label Potty_Mouth:
    
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop"
-
     hide toilet
     show john annoyed
     J "NO! I HAVE DEALT WITH NOTHING BUT STUPID SHIT ALL DAY! IF YOU THINK I AM NOT WILLING TO BREAK SOMETHING I WILL!"
-
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop"
     hide toilet
     show john annoyed
@@ -379,18 +393,26 @@ label Shit_Faced:
     J "You like pissing people off or is this something special just for me?"
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop"
     hide toilet
     show john frustrated
     J "HAHAHAHAHAHAHA! I'm actually going insane... I'm talking to a fucking toilet like it can actually talk."
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop Bloop"
     hide toilet
     show john idle
     J "If you can understand what I'm saying, bubble five time."
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop Bloop Bloop Bloop Bloop"
     "..."
     hide toilet
@@ -398,6 +420,7 @@ label Shit_Faced:
     J "Oh what th-"
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop"
     hide toilet
     show john annoyed
@@ -412,6 +435,7 @@ label English_Please:
     J "Why are you pissing me off?"
     hide john
     show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Swoosh"
     hide toilet
     show john frustrated
@@ -420,18 +444,23 @@ label English_Please:
     J " Deep breathes... Okay... did you intentionally piss me off?"
     hide john
     show toilet idle    
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop"
     hide toilet
     show john annoyed
     J "Bitch. Why? Fuck... That's on me. Are you an evil ghost?" 
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop Bloop"
     hide toilet
     show john idle
     J "That's a fucking lie."
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop Bloop"
     jump Magic_Toilet
 
@@ -441,41 +470,55 @@ label Magic_Toilet:
     J "Why are you here?"
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Flush"
     hide toilet
     show john idle
     J "Uh, are you from here?"
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop bloop"
     hide toilet
     show john idle
     J "Are you a demon?"
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop bloop"
     hide toilet
     show john idle
     J "Why does this place suck ass?"
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop"
     hide toilet
     show john idle
     J "... You don't like this place?"
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop"
     hide toilet
     show john idle
     J "Did you break my car?"
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop bloop"
     hide toilet
     show john idle
     J "Fuck... are there more haunted things or ghosts here?"
+    hide john
+    show toilet idle
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop"
+    hide toilet
+    show john idle
     jump Constipation
 
 label Constipation:
@@ -483,12 +526,14 @@ label Constipation:
     J "Is there a ghost after me?"
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Bloop"
     hide toilet
     show john idle
     J "Can I fight it?"
     hide john
     show toilet idle 
+    play sound "audio/regularflush_1.wav" volume 0.4
     T "Swoosh"
     hide toilet
     show john annoyed
@@ -497,6 +542,7 @@ label Constipation:
     J "Answer me toilet!"
     hide john
     show toilet bloody 
+    play sound "audio/thickbloodyflush_1.wav" volume 0.4
     T "Bloop Bloop"
     hide toilet
     show john idle
@@ -508,6 +554,7 @@ label Dogwater:
     Ji "Seeing my chance to get out I dashed for door."
     hide john
     show toilet bloody 
+    play sound "audio/thickbloodyflush_1.wav" volume 0.4
     T "BLOOP BLOOP"
     hide toilet
     show john idle
@@ -515,12 +562,14 @@ label Dogwater:
     Ji "In my panicked state I couldn't hear the strange noises coming from outside the door. It sounded like bubbles. A lot of bubbles."
     hide john
     show toilet bloody 
+    play sound "audio/thickbloodyflush_1.wav" volume 0.4
     T "BLOOP BLOOP"
     hide toilet
     show john idle
     J "WHAT TOILET? I NEED TO GET OUT NOW I'M GOING TO DIE!"
     hide john
     show toilet bloody 
+    play sound "audio/thickbloodyflush_1.wav" volume 0.4
     T "BLOOP BLOOP"
     hide toilet
     show john idle
@@ -591,10 +640,12 @@ label Clogged:
 label Foreboding:
     scene bg chair
     show john annoyed
+    play sound "audio/footstepsonwood_1.wav" volume 0.7
     Ji "I can't stand this. I can't stand the absolute emptiness of this place."
     show john idle
     Ji "I paced quickly to the living room to grab a chair and dragged it over to the window."
     show john frustrated
+    play sound "audio/woodcreaking.wav" volume 0.5
     Ji "The noise it made against the wood was frustrating; just like my resentment for this place."
     show john idle
     Ji "I set it up to look out the window but, did I really wish to do so? Was this really all I could do?"
